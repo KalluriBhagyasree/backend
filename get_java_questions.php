@@ -27,7 +27,7 @@ if (isset($_GET['title']) && !empty($_GET['title'])) {
     $title = $_GET['title'];
 
     try {
-        $stmt = $conn->prepare("SELECT * FROM java_questions WHERE title = :title");
+        $stmt = $conn->prepare("SELECT id, question, option_a, option_b, option_c, option_d, correct_option FROM java_questions WHERE title = :title");
         $stmt->bindParam(':title', $title, PDO::PARAM_STR);
 
         if ($stmt->execute()) {

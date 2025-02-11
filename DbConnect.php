@@ -1,7 +1,4 @@
 <?php 
-	/**
-	* Database Connection
-	*/
 	class DbConnect {
 		private $server = 'localhost';
 		private $dbname = 'project_db';
