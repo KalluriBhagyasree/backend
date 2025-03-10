@@ -24,14 +24,14 @@ try {
     // Check if 'id' is passed
     if (isset($_GET['id'])) {
         $id = intval($_GET['id']);
-        $sql = "SELECT content FROM python WHERE id = :id";
+        $sql = "SELECT content FROM networks WHERE id = :id";
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
     }
     // Check if 'title' is passed
     elseif (isset($_GET['title'])) {
         $title = $_GET['title'];
-        $sql = "SELECT content FROM python WHERE title = :title";
+        $sql = "SELECT content FROM networks WHERE title = :title";
         $stmt = $conn->prepare($sql);
         $stmt->bindParam(':title', $title, PDO::PARAM_STR);
     }
